@@ -1,0 +1,15 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.won {
+  color: #fff;
+  font-size: calc(var(--size) * 1.2);
+  letter-spacing: 2px;
+  padding: 0 var(--size);
+  text-shadow: 0 0 calc(var(--size) * 1) #fff, 0 0 calc(var(--size) * 2) #fff,
+    0 0 calc(var(--size) * 4) #fff;
+}

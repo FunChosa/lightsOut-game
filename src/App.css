@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
+:root {
+  --size: 25px;
+  --firstColor: #e71249;
+  --secondColor: #e1a53b;
+  --onColor: #e1a53bc4;
+  --offColor: #1f1c1c;
+  --backgroundColorDark: #000000;
+  --backgroundColorLight: #212121;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--backgroundColorDark);
+}
+
+.App {
+  font-family: "Bungee Shade", cursive;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  min-width: calc(var(--size) * 15);
+  min-height: calc(var(--size) * 30);
+  
+}
+
+.select-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+select {
+  font-style: inherit;
+  background-color: transparent;
+  color: var(--firstColor);
+  font-family: inherit;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+select:focus-visible {
+  outline: none;
+}

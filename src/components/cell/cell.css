@@ -1,0 +1,18 @@
+.on,
+.off {
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / 2);
+  border: none;
+  border-radius: 50%;
+}
+
+.on {
+  background-color: var(--onColor);
+  box-shadow: 0 0 calc(var(--size)) var(--onColor),
+    0 0 calc(var(--size) * 2) var(--onColor);
+}
+
+.off {
+  background-color: var(--offColor);
+}
