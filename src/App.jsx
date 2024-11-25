@@ -1,26 +1,25 @@
 import { useState } from "react";
 import "./App.css";
-import Board from "./components/board/board";
-import Title from "./components/title/title";
+import Title from "./components/Title";
+import BoardSizeSelect from "./components/BoardSizeSelect";
+import Board from "./components/Board";
 
 function App() {
   const [size, setSize] = useState(5);
   const sizes = [2, 3, 4, 5, 6, 7];
+
+  const changeBoardSize = (size) => {
+    setSize(size);
+  };
+
   return (
     <div className="App">
       <Title />
-      <div className="select-container">
-        <select
-          value={size}
-          onChange={(e) => setSize(parseInt(e.target.value))}
-        >
-          {sizes.map((size) => (
-            <option key={size} value={size}>
-              {size}x{size}
-            </option>
-          ))}
-        </select>
-      </div>
+      <BoardSizeSelect
+        size={size}
+        changeBoardSize={changeBoardSize}
+        sizes={sizes}
+      />
       <Board size={size} key={size} />
     </div>
   );

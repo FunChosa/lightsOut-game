@@ -2,12 +2,11 @@
 
 :root {
   --size: 25px;
-  --firstColor: #e71249;
-  --secondColor: #e1a53b;
-  --onColor: #e1a53bc4;
-  --offColor: #1f1c1c;
-  --backgroundColorDark: #000000;
-  --backgroundColorLight: #212121;
+  --firstColor: #7231ff;
+  --secondColor: #ffc01d;
+  --onColor: #ffc01d;
+  --offColor: #222222;
+  --backgroundColor: #07080a;
 }
 
 html,
@@ -15,11 +14,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: var(--backgroundColorDark);
+  background-color: var(--backgroundColor);
+  font-family: "Bungee Shade", cursive;
 }
 
 .App {
-  font-family: "Bungee Shade", cursive;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -28,7 +27,6 @@ body {
   justify-content: center;
   min-width: calc(var(--size) * 15);
   min-height: calc(var(--size) * 30);
-  
 }
 
 .select-container {
@@ -45,8 +43,83 @@ select {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
 }
 
 select:focus-visible {
   outline: none;
+}
+
+.title {
+  font-size: calc(var(--size) * 1.5);
+  letter-spacing: 2px;
+  margin-bottom: var(--size);
+}
+
+.firstColor {
+  color: var(--secondColor);
+  animation: flicker 1.5s infinite alternate;
+}
+
+.secondColor {
+  color: var(--firstColor);
+  text-shadow: 0 0 calc(var(--size)) var(--firstColor),
+    0 0 calc(var(--size) * 2) var(--firstColor),
+    0 0 calc(var(--size) * 4) var(--firstColor);
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 calc(var(--size)) var(--secondColor),
+      0 0 calc(var(--size) * 2) var(--secondColor),
+      0 0 calc(var(--size) * 4) var(--secondColor);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.on,
+.off {
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / 2);
+  border: none;
+  border-radius: 50%;
+}
+
+.on {
+  background-color: var(--onColor);
+  box-shadow: 0 0 calc(var(--size)) var(--onColor),
+    0 0 calc(var(--size) * 2) var(--onColor);
+}
+
+.off {
+  background-color: var(--offColor);
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.won {
+  color: #fff;
+  font-size: calc(var(--size) * 1.2);
+  letter-spacing: 2px;
+  padding: 0 var(--size);
+  text-shadow: 0 0 calc(var(--size) * 1) #fff, 0 0 calc(var(--size) * 2) #fff,
+    0 0 calc(var(--size) * 4) #fff;
 }

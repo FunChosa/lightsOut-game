@@ -1,13 +1,14 @@
 import { useState } from "react";
-import "./board.css";
-import Cell from "../cell/cell";
+import Cell from "./Cell";
 
 const Board = ({ size }) => {
   const createGrid = () =>
     new Array(size)
       .fill()
       .map((r) => new Array(size).fill().map((c) => Math.random() < 0.5));
+
   const [board, setBoard] = useState(createGrid());
+
   const toggleLights = (rowIndex, colIndex) => {
     const copyBoard = [...board.map((r) => [...r])];
     copyBoard[rowIndex][colIndex] = !copyBoard[rowIndex][colIndex];

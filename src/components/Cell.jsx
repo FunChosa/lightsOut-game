@@ -1,5 +1,3 @@
-import "./cell.css";
-
 const Cell = ({ rowIndex, colIndex, isOn, toggleLights }) => {
   const handleClick = () => toggleLights(rowIndex, colIndex);
 
